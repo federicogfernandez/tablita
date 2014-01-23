@@ -192,7 +192,7 @@ $('#card').html(table);
     for(cell in board){
         for(y in board[cell]){
             for(x in board[cell][y]){
-                $('#board table:eq('+cell+') tr:eq('+y+') td:eq('+x+')').css('background', colors[board[cell][y][x]] || '#000000');
+                $('#board table:eq('+cell+') tr:eq('+y+') td:eq('+x+')').css('background', colors[board[cell][y][x]] || '#6b470f');
             }
         }
     }
