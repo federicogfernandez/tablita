@@ -29,6 +29,13 @@ var colors = [
     '#ffffff'
 ];
 
+var chipsColors = [
+    '#323232',
+    '#a80000',
+    '#dccf00',
+    '#4c6b2a'
+];
+
 var chips = [
     [
         [
@@ -168,8 +175,17 @@ for(var i=0; i<2; i++){
     table += '</tr>';
 }
 
-$('#board').append(table);
-$('#chips').append(table);
+$('#board').html(table);
+$('#chips').html(table);
+
+table = '';
+for(var i=0; i<colors.length; i++){
+    table += '<tr>';
+    table += '<td class="color" style="background: '+colors[i]+'">&nbsp;</td>';
+    table += '<td class="number"><input type="number" /></td>';
+    table += '</tr>';
+}
+$('#card').html(table);
 
 //PINTO board
 (function paintBoard(){
@@ -182,10 +198,13 @@ $('#chips').append(table);
     }
 
     for(chipType in chips){
-        for(y in chips[chipType][0]){
-            for(x in chips[chipType][0][y]){
-                if(chips[chipType][0][x][y]){
-                    $('#chips table:eq('+chipType+') tr:eq('+y+') td:eq('+x+')').css('background', '#888888');
+        var variant = Math.floor(Math.random()*chips[chipType].length);
+        var variant = Math.floor(Math.random()*chips[chipType].length);
+        
+        for(y in chips[chipType][variant]){
+            for(x in chips[chipType][variant][y]){
+                if(chips[chipType][variant][x][y]){
+                    $('#chips table:eq('+chipType+') tr:eq('+y+') td:eq('+x+')').css('background', chipsColors[chipType]);
                 }
             }
         }
