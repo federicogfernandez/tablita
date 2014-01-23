@@ -199,7 +199,6 @@ $('#card').html(table);
 
     for(chipType in chips){
         var variant = Math.floor(Math.random()*chips[chipType].length);
-        var variant = Math.floor(Math.random()*chips[chipType].length);
         
         for(y in chips[chipType][variant]){
             for(x in chips[chipType][variant][y]){
