@@ -182,7 +182,7 @@ table = '';
 for(var i=0; i<colors.length; i++){
     table += '<tr>';
     table += '<td class="color" style="background: '+colors[i]+'">&nbsp;</td>';
-    table += '<td class="number"><input type="number" /></td>';
+    table += '<td class="number"><input type="number" value="0" /></td>';
     table += '</tr>';
 }
 $('#card').html(table);
